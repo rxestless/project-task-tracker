@@ -1,0 +1,18 @@
+[
+  {
+    "title": "JEE ADVANCED PREP",
+    "description": "COMPLETING PHYSICS HC VERMA PART 1 AND 2 AND BLACK BOOK FOR MATHS",
+    "due_date": "2027-07-23",
+    "completed": true,
+    "createdAt": "2026-07-21 16:46:45",
+    "updatedAt": "2026-07-21 16:48:19"
+  },
+  {
+    "title": "COLLEGE ANALYSIS",
+    "description": "FINDING COLLEGES AFTER JEE ADVANCED RESULT",
+    "due_date": " 2027-08-23",
+    "completed": false,
+    "createdAt": "2026-07-21 16:52:13",
+    "updatedAt": "2026-07-21 16:52:13"
+  }
+]
