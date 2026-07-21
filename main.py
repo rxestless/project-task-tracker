@@ -24,7 +24,7 @@ def add_tasks(tasks, title, description, due_date) :
 
 def list_tasks(tasks):
     for index, task in enumerate(tasks, start = 1) :
-        print(f"{index}. {task['title']} - Due : {task['due_date']} - {'Completed' if task['completed'] else 'Incomplete'}")
+        print(f"{index}. {task['title']} - Due : {task['due_date']} - {'Completed' if task['completed'] else 'Incomplete'} - Created On : {task['createdAt']} - Last Updated: {task['updatedAt']}")
 
 def update_tasks(tasks, title, description, due_date, index) : 
     if 0 < index <= len(tasks) :        
@@ -55,6 +55,8 @@ def search_tasks(tasks, index) :
         print(f"Description: {task['description']}")
         print(f"Due Date: {task['due_date']}")
         print(f"Status: {'Completed' if task['completed'] else 'Incomplete'}")
+        print(f"Created At:  {task['createdAt']}")
+        print(f"Updated At:  {task['updatedAt']}")
         print("--------------------")
         print("Task shown successfully!")
     else :
