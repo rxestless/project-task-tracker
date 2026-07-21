@@ -1,4 +1,6 @@
 # project-task-tracker
+Idea taken from -> https://roadmap.sh/projects/task-tracker
+
 A lightweight Command-Line Interface (CLI) task manager built with Python. It allows users to create, view, search, update, delete, and mark tasks as completed, with automatic backend tracking for creation and modification timestamps.
 
 <img width="1000" height="180" alt="image" src="https://github.com/user-attachments/assets/e0d4348c-5f14-4f4c-bb97-d6dfa1a8cade" />
