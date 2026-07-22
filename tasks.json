@@ -1,18 +1,18 @@
-[   
+[
   {
     "title": " Taking Doug to a walk",
     "description": " Brisk 30 minute walk with Doug",
     "due_date": " 2026-07-21",
     "completed": false,
     "createdAt": "2026-07-21 16:58:13",
-    "updatedAt": "2026-07-21 16:58:13"
+    "updatedAt": "2026-07-22 13:23:28"
   },
   {
     "title": " College Applications",
     "description": " Applying to colleges",
     "due_date": " 2026-08-29",
-    "completed": false,
+    "completed": "In-Progress",
     "createdAt": "2026-07-21 16:58:48",
-    "updatedAt": "2026-07-21 16:58:48"
+    "updatedAt": "2026-07-22 13:43:25"
   }
 ]
