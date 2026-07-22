@@ -72,12 +72,71 @@ def mark_task_complete(tasks, index):
     else :
         print("Error! Invalid index input!")
 
+def mark_task_inprog(tasks, index):
+    if 0 < index <= len(tasks) :
+        task = tasks[index-1]
+        task['completed'] = "In-Progress"
+        task['updatedAt'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        write_tasks(tasks)
+        print("Task marked as in-progress successfully!")
+    else :
+        print("Error! Invalid index input!")
+
+def show_task_incomplete(tasks) :
+    incomplete_tasks = []
+    for task in tasks :
+        if task['completed'] == False :
+            incomplete_tasks.append(task)
+    if incomplete_tasks :
+        print("\n--- INCOMPLETE TASKS ---")
+        for tsk in incomplete_tasks:
+            print(f"Title       : {tsk['title'].strip()}")
+            print(f"Description : {tsk['description'].strip()}")
+            print("Status      : Incomplete")
+            print("-----------------------")
+        print("Listed incomplete tasks!")   
+    else :
+        print("Incomplete tasks not found!")
+    
+
+def show_task_complete(tasks) :
+    completed_tasks = []
+    for task in tasks :
+        if task['completed'] == True :
+            completed_tasks.append(task)
+    if completed_tasks :
+        print("\n--- COMPLETED TASKS ---")
+        for tsk in completed_tasks:
+            print(f"Title       : {tsk['title'].strip()}")
+            print(f"Description : {tsk['description'].strip()}")
+            print("Status      : Completed")
+            print("-----------------------")
+        print("Listed completed tasks!")
+    else :
+        print("Incomplete tasks not found!")
+    
+
+def show_task_inprog(tasks) :
+    inprog_tasks = []
+    for task in tasks :
+        if task['completed'] == "In-Progress" :
+            inprog_tasks.append(task)
+    if inprog_tasks :
+        print("\n--- IN-PROGRESS TASKS ---")
+        for tsk in inprog_tasks:
+            print(f"Title       : {tsk['title'].strip()}")
+            print(f"Description : {tsk['description'].strip()}")
+            print("Status      : In-Progress")
+            print("-----------------------")
+        print("Listed in-progress tasks!")
+    else :
+        print("Incomplete tasks not found!")
+    
+
+
 def main(): 
     tasks = load_tasks()
     is_running = True
-    
-    
-
     while is_running :
         print("\n=== TASK MANAGER ===")
         print("1. Add Task")
@@ -86,40 +145,61 @@ def main():
         print("4. Update Task")
         print("5. Delete Task")
         print("6. Mark Complete")
-        print("7. Exit")
+        print("7. Mark In-Progress")
+        print("8. Search completed Tasks")
+        print("9. Search incomplete Tasks")
+        print("10. Search in-progress tasks")
+        print("11. Exit")
 
-        choice = int(input("Enter choice (1-7) :"))
-        if choice ==  1 :
+        choice = input("Enter choice (1-11) :")  
+        if choice ==  "1" :
             title = input("Enter title :")
             desc = input("Enter description :")
             due_date = input("Enter due date : (YYYY-MM-DD)")
             add_tasks(tasks, title, desc, due_date)
             
-        elif choice == 2 :
+        elif choice == "2" :
             list_tasks(tasks)
             
-        elif choice == 3 :
+        elif choice == "3" :
             index = int(input("Enter index to find task :"))
             search_tasks(tasks, index)
             
-        elif choice == 4 :
+        elif choice == "4" :
             index = int(input("Enter index to update the task :"))
             title = input("Enter updated title :")
             desc = input("Enter updated description :")
             due_date = input("Enter updated due-date :")
             update_tasks(tasks, title, desc, due_date, index)
             
-        elif choice == 5 :
+        elif choice == "5" :
             index = int(input("Enter index to delete the task :"))
             delete_tasks(tasks, index)
         
-        elif choice == 6 :
+        elif choice == "6" :
             index = int(input("Enter index to mark the task as complete :"))
             mark_task_complete(tasks, index)
+
+        elif choice == "7":
+            index = int(input("Enter index to mark the task in-progress :"))
+            mark_task_inprog(tasks,index)
+
+        elif choice == "8" :
+            show_task_complete(tasks)
+            print()
         
-        elif choice == 7 :
+        elif choice == "9":
+            show_task_incomplete(tasks)
+            print()
+
+        elif choice == "10":
+            show_task_inprog(tasks)
+            print()
+
+        elif choice == "11":
             print("Goodbye!")
             is_running = False
+
         else :
             print("Invalid option, Try again.")
 
